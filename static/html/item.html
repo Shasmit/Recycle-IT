@@ -13,7 +13,30 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
 
-    <link rel="stylesheet" type="text/css" href="/Fun_tastic-4-main/static/css/item.css">
+    <!-- <link rel="stylesheet" type="text/css" href="/Fun_tastic-4-main/static/css/item.css"> -->
+    <link rel="stylesheet" href="../css/item.css">
+
+    <link rel="stylesheet" href="../css/profile.css">
+    <link rel="stylesheet" href="../css/button.css">
+    <link rel="stylesheet" href="../css/nav.css">
+    <link rel="stylesheet" href="../css/products.css">
+    <link rel="stylesheet" href="../css/login.css">
+
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+        integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
+
+    <!-- linking fontawesome -->
+    <script src="https://kit.fontawesome.com/075f22e2f4.js" crossorigin="anonymous"></script>
 
     
 
@@ -21,9 +44,105 @@
 
 <body>
     <div class="container-fluid">
-        <div class="images-slider">
+        <nav class="navbar navbar-expand-lg">
+            <!-- <a class="navbar-brand" href="#">Recycle-IT</a> -->
+    
+            <div class="logo"><img src="../images/logo.png" alt="Recycle-it logo"></div>
+    
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active home">
+                        <a class="nav-link" href="#" style="color: white;">Home <span class="sr-only">(current)</span></a>
+                    </li>
+    
+                    <li>
+                        <button type="button" class="btn btn-info createPost" data-toggle="modal"
+                            data-target="#exampleModalLong"
+                            style="background-color: transparent; border: none; color:white;">
+                            Create Post
+                        </button>
+    
+                        <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog"
+                            aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLongTitle">Post Ad</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="steps">
+                                            <div class="from-group">
+    
+                                                <div class="form-group selectOpt">
+    
+                                                    <select class="form-select text-uppercase"
+                                                        aria-label="Default select example" required>
+    
+                                                        <option selected>Category</option>
+    
+                                                        <option value="Kathmandu">Donate</option>
+    
+                                                        <option value="Pokhara">Exchange</option>
+    
+                                                    </select>
+    
+                                                </div>
+    
+                                                <input type="text" class="form-control" placeholder="Title..." id="title"
+                                                    maxlength="15" required>
+    
+                                                <textarea class="form-control" id="" rows="3"
+                                                    placeholder="Product description..."></textarea>
+                                                <br>
+                                                <input type="text" class="form-control" placeholder="Location..."
+                                                    id="location" required>
+    
+                                                <input type="file" id="avatar" name="avatar" accept="image/png, image/jpeg"
+                                                    multiple="multiple">
+    
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                                        <button type="submit" class="btn btn-primary">Publish</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+    
+                        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+                            integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+                            crossorigin="anonymous"></script>
+                        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+                            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+                            crossorigin="anonymous"></script>
+                        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+                            integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+                            crossorigin="anonymous"></script>
+                    </li>
+    
+                    <li class="nav-item">
+                        <a class="nav-link" href="../html/profile.html" style="color: white;">My Profile <span
+                                class="sr-only">(current)</span></a>
+                    </li>
+    
+                </ul>
+                <!-- <form class="form-inline my-2 my-lg-0">
+                    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                </form> -->
+            </div>
+        </nav>
+
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSYaQE2_T9cdK8PauC6EUySqnrZ0Wtb6xzm3g&usqp=CAU" alt="" style="width: 100%; height: 400px;">
+        <br><br>
+        <!-- <div class="images-slider">
             <div class="container">
-                <!-- upper images -->
+                
                 <div class="mySlides">
                     <div class="numbertext">1 / 4</div>
                     <img src="https://media.istockphoto.com/photos/patan-picture-id637696304?k=20&m=637696304&s=612x612&w=0&h=GqmMtggU2LgHWcXPFNxMrZg9dtPzyrnl9ek5oARcI7Y="
@@ -55,7 +174,7 @@
                     <p id="caption"></p>
                 </div>
 
-                <!-- lower images -->
+               
                 <div class="row lowerImages">
                     <div class="column">
                         <img class="demo cursor"
@@ -79,27 +198,27 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> -->
 
         <div class="productDetails">
             <div class="userPosted">
-                <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/1077/1077012.png" alt=""
+                <a href="../html/messaging.html"><img src="https://cdn-icons-png.flaticon.com/512/1077/1077012.png" alt=""
                         class="userImage" /></a>
-                <a href="#">user_name</a>
+                <a href="../html/messaging.html" style="text-decoration: none;">user_name</a>
                 <br>
                 <label for="" class="text-success">2 mins ago</label>
             </div>
 
             <div class="post-title">
-                <span>
-                    <h3>Title: class 8 books</h3>
-                </span>
-
+                
+                    <h3 style="float: left;">Title: class 8 books</h3>
+                
             </div>
+            <br>
 
             <div class="post-details">
                 <div class="form-group">
-                    <h5>Description</h5>
+                    <h5 style="margin-inline-start: 0;">Description</h5> <br>
                     <h6>Category: Exchange</h6>
                     <label for="">
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In vehicula porta ligula, et
@@ -123,13 +242,19 @@
                         <h4 class="location">Location:</h4>
                     </label>
                     <label for="" id="location"> Kathmandu </label>
+
+                    <br>
+                    <label for="contact">
+                        <h4 class="contact">Contact:</h4>
+                    </label>
+                    <label for="" id="contact"> 334343 </label>
                 </div>
             </div>
         </div>
 
-        <div class="buttonContent text-center">
+        <!-- <div class="buttonContent text-center">
             <button type="button" class="btn btn-primary text-uppercase">chat</button>
-        </div>
+        </div> -->
 
         <div class="comment-box">
             <div class="userComment">
@@ -149,9 +274,9 @@
             <div class="comment-display">
                 <div class="form-group">
                     <div>
-                        <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/1077/1077012.png" alt=""
+                        <a href="../html/messaging.html"><img src="https://cdn-icons-png.flaticon.com/512/1077/1077012.png" alt=""
                                 class="userImage" /></a>
-                        <a href="#">user_name</a>
+                        <a href="../html/messaging.html">user_name</a>
 
                         <label for="" class="text-success"> 0 mins ago</label>
                     </div>
@@ -162,7 +287,7 @@
                         </button>
                         <ul class="dropdown-menu" aria-labelledby="dropOpt">
                             <li><a class="dropdown-item" href="#">Delete</a></li>
-                            <li><a class="dropdown-item" href="#">Edit</a></li>
+                            <li><button class="dropdown-item" href="#" disabled>Edit</button></li>
                         </ul>
                     </div>
                 </div>
@@ -174,9 +299,9 @@
             <div class="comment-display">
                 <div class="form-group">
                     <div>
-                        <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/1077/1077012.png" alt=""
+                        <a href="../html/messaging.html"><img src="https://cdn-icons-png.flaticon.com/512/1077/1077012.png" alt=""
                                 class="userImage" /></a>
-                        <a href="#">user_name</a>
+                        <a href="../html/messaging.html">user_name</a>
 
                         <label for="" class="text-success"> 0 mins ago</label>
                     </div>
@@ -187,7 +312,7 @@
                         </button>
                         <ul class="dropdown-menu" aria-labelledby="dropOpt">
                             <li><a class="dropdown-item" href="#">Delete</a></li>
-                            <li><button class="dropdown-item" href="#">Edit</button></li>
+                            <li><button class="dropdown-item" href="#" disabled>Edit</button></li>
                         </ul>
                     </div>
                 </div>

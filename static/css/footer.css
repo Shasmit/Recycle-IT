@@ -9,7 +9,6 @@ body{
 
 }
 footer{
-position: absolute;
 background: black;
 height: auot;
 width: 100vw;
@@ -77,8 +76,5 @@ li{
     text-transform: capitalize;
 }
 
-.footer-bottom p span{
-    text-transform: uppercase;
-    opacity: .4;
-    font-weight: 200;
-}
+
+

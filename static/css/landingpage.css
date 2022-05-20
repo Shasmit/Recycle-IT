@@ -14,31 +14,40 @@ body{
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
+    box-sizing: border-box;
+    font-family: monospace;
 }
-/* / 
-html{
-    font-size: 62.5%;
-} / */
 
-.logo img{
-    height: 160px;
+.header{
+    display: flex;
+    flex-direction: row;
+    background-color: black;
+    height: 100px;
+    justify-content: space-between;
+}
+
+.logo{
+    height: 100%;
+    align-items: center;
+    align-content: center;
     overflow: hidden;
 }
-nav{
+.logo img{
+    height: 170px;
+    overflow: hidden;
+    width: 200px;
+    position: relative;
+    bottom: 35px;
+}
+
+
+/* nav{
     height: 80px;
     padding: 0;
     margin: 0;
-}
+} */
 
-
-body
-{
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-    font-family: monospace;
-    /* / background-color: red; */ 
-}
+/* 
 nav
 {
     background: #222;
@@ -86,7 +95,7 @@ nav ul li .dropdown-menu .dropdown-item:hover
       background-color: red;
       margin: 0 !important;
 
-  }
+  } */
 
 .main-container{
     display: flex;
@@ -101,7 +110,7 @@ nav ul li .dropdown-menu .dropdown-item:hover
     flex-direction: column-reverse;
     justify-content: center;
     align-items: center;
-    margin: 20px 400px 30px 400px;
+    margin: 35px 400px 30px 400px;
     /* background-color: aquamarine; */
     background: rgba(0, 0,0,0.6);
     /* box-sizing: border-box; */
@@ -115,8 +124,8 @@ nav ul li .dropdown-menu .dropdown-item:hover
 .slogan h1{
     text-align: center;
     color: white;
-    margin-bottom: 20px;
-    font-size: 25px;
+    margin-bottom: 25px;
+    font-size: 26px;
     font-weight: 700;
     font-family: 'Nunito', sans-serif;
 }
@@ -125,20 +134,24 @@ nav ul li .dropdown-menu .dropdown-item:hover
     align-items: center;
     text-align: center;
     width: 750px;
+    position: relative;
+    bottom: 45px;
 }
 
 .slogan p{
     text-align: left;
-    margin-left: 20px;
+    margin-left: 24px;
     text-align: left;
     color: white;
     font-size: 16px;
     font-family: 'Nunito', sans-serif;
+    margin-right: 20px;
+    text-align: justify;
 }
 
 .logo-img{
     width: 300px;
-    height: 250px;
+    height: 300px;
 }
 .logo-img img{
     /* align-items: center; */
@@ -154,7 +167,8 @@ nav ul li .dropdown-menu .dropdown-item:hover
 .buttons{
     display: flex;
     justify-content: flex-end;
-    margin-top: 10px;
+    align-items: center;
+    /* margin-top: 10px; */
     gap: 10px;
     margin-right: 20px;
 }
@@ -165,7 +179,7 @@ nav ul li .dropdown-menu .dropdown-item:hover
     border: none;
     padding: 3px 23px;
     box-shadow: 1px 1px 3px black;
-    background-color: #D2EBE9;
+    background-color: #A7D0CD;
     cursor: pointer;
 }
 

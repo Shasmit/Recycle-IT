@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="description" content="Automates Accounting" />
+  <meta name="keywords" content="E-Ledger System, Tesla online bill, E-way Online, Online Billing, Hayatt online bill">
+  <meta name="author" content="Tabassum Khan">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+  <!-- jQuery library -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+  <!-- Popper JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+
+  <!-- Latest compiled JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+  <title>Projo Login</title>
+
+  <!--=====================================================================================================-->
+
+  <link rel="stylesheet" type="text/css" href="/Fun_tastic-4-main/static/css/login.css"> <!-- Login CSS -->
+  <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"> <!-- FontAwesome CSS -->
+  <!--script src="js/login.js"></script> JS file -->
+
+</head>
+
+<body>
+  <div class="box">
+
+    <div class="row login-tab">
+      <div class="col login link" id="login-link">
+        <h4 id="login-heading"> Login</h4>
+      </div>
+      <div class="col signup link" id="signup-link">
+        <h4 id="signup-heading"> Sign Up </h4>
+      </div>
+    </div>
+
+    <!--LOGIN -->
+    <div id="login-box">
+      <form action="" id="login-form">
+        <div class="form-group">
+          <input type="text" name="email" required />
+          <label for="email"> Email </label>
+        </div>
+        <div class="form-group">
+          <input type="password" id="login-pass" name="password" required />
+          <i toggle="#login-pass" class="fa fa-eye toggle-password" id="toggle-login-pass"></i>
+          <label for="password"> Password </label>
+        </div>
+        <div class="row remember-forgot-tab">
+          <div class="col checkbox">
+            <label><input type="checkbox" name="remember-me" checked="checked" /> <span> Remember Me? </span></label>
+          </div>
+          <div class="col forgot-pass">
+            <label> <a href="www.google.com" name="forgot-pass"> Forgot Password? </a> </label>
+          </div>
+        </div>
+        <button type="submit" class="btn btn-outline-info btn-block"> Login </button>
+      </form>
+    </div> <!-- end of login-box -->
+
+    <!-- SIGNUP -->
+    <div id="signup-box">
+      <form action="" id="signup-form">
+        <div class="name">
+          <div class="form-group">
+            <input type="text" name="username" required />
+            <label for="username"> First Name </label>
+          </div>
+          <div class="form-group">
+            <input type="text" name="username" required />
+            <label for="username"> Last Name </label>
+          </div>
+        </div>
+        
+        <div class="form-group">
+          <input type="text" name="email" required />
+          <label for="email"> Email </label>
+        </div>
+        
+        <div class="form-group">
+          <input type="password" id="signup-pass" name="password1" required />
+          <i toggle="#signup-pass" class="fa fa-eye toggle-password" id="toggle-signup-pass"></i>
+          <label for="password"> Password </label>
+        </div>
+        <div class="form-group">
+          <input type="password" id="confirm-pass" name="password2" required />
+          <i toggle="#confirm-pass" class="fa fa-eye toggle-password" id="toggle-confirm-pass"></i>
+          <label for="confirm-password"> Confirm Password </label>
+        </div>
+
+        <!-- <div class="upload"><p>Upload your Citizenship picture :</p></div> -->
+        <label for="choose-file" class="upload">Upload your Citizenship : <Picture></Picture></label>
+        <input type="file" name="Citizenship" id="citizenship_image">
+        
+        <button type="submit" class="btn btn-outline-info btn-block"> Create Account </button>
+      </form>
+    </div> <!-- end of signup-box -->
+
+  </div>
+  <!--end of container box -->
+
+  <script>
+    // hide signup form when website first loads
+    $(document).ready(function() {
+      $('#signup-box').hide();
+      $('#login-link').css({
+        "color": "#ccc",
+        "border": "1px solid #59B4B4"
+      });
+    });
+
+    /***********************************************************************************************************************/
+    //show signup and hide login after on clicking signup link
+    $('#signup-link').click(function() {
+      $('#login-box').hide(500, function() {
+        $('#signup-box').show(500); //show signup box
+        linkStyleOnClick($('#signup-link')); //CSS on click of signup link
+        linkStyleOffClick($('#login-link')) //change the color and border of login link to its original color
+        $('#login-form').trigger("reset"); //Reset login form once signup is clicked
+        resetEyeToggle($('#toggle-login-pass')); //Resetting login eye toggle
+      });
+    });
+
+    //show login and hide signup on clicking login link
+    $('#login-link').click(function() {
+      $('#signup-box').hide(500, function() {
+        $('#login-box').show(500); //show login box
+        linkStyleOnClick($('#login-link')); //CSS on click of login link
+        linkStyleOffClick($('#signup-link')) //change the color and border of signup link to its original color
+        $('#signup-form').trigger("reset"); //Reset signup form once login is clicked
+        //Resetting signup pass and confirm eye toggle
+        resetEyeToggle($('#toggle-signup-pass'));
+        resetEyeToggle($('#toggle-confirm-pass'));
+      });
+    });
+
+    function linkStyleOnClick(link) {
+      link.css({
+        "color": "#ccc",
+        "border": "1px solid #59B4B4"
+      });
+    }
+
+    function linkStyleOffClick(link) {
+      link.css({
+        "color": "#59B4B4",
+        "border": "none"
+      });
+    }
+
+    //Resetting Eye Toggle on leaving the particular box
+    function resetEyeToggle(eye) {
+      if (eye.hasClass('fa-eye-slash')) {
+        eye.removeClass('fa-eye-slash');
+        eye.addClass('fa-eye');
+        var input = $(eye.attr("toggle"));
+        input.attr("type", "password");
+      }
+    }
+
+    /***********************************************************************************************************************/
+    //changing color hovering on login-link and returning back to its original color if its in signup-box
+    $(document).ready(function() {
+      $('.login-tab').find('.col').hover(function() {
+        $(this).css("color", "#ccc");
+      }, function() {
+        // out hover function --- change the color if only that box is not visible
+        if ($('#login-box').is(':hidden')) {
+          $('#login-link').css("color", "#59B4B4");
+        }
+
+        if ($('#signup-box').is(':hidden')) {
+          $('#signup-link').css("color", "#59B4B4");
+        }
+      });
+    });
+
+    /***********************************************************************************************************************/
+    //Toggle eye icon of login pass
+    $('#toggle-login-pass').click(function() {
+      toggleEye($(this));
+    });
+
+    //Toggle eye icon of signup pass
+    $('#toggle-signup-pass').click(function() {
+      toggleEye($(this));
+    });
+
+    //Toggle eye icon of confirm pass
+    $('#toggle-confirm-pass').click(function() {
+      toggleEye($(this));
+    });
+
+    //function TO toggle EYE ICON of passwords
+    function toggleEye(eye) {
+      eye.toggleClass("fa-eye fa-eye-slash");
+      var input = $(eye.attr("toggle"));
+      if (eye.hasClass("fa-eye-slash")) {
+        input.attr("type", "text");
+      } else {
+        input.attr("type", "password");
+      }
+    }
+  </script>
+
+</body>
+
+</html>

@@ -1,0 +1,207 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
+*,
+*::after,
+::before{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    background-image: url('/Fun_tastic-4-main/static/images/background_image.png');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+/* / 
+html{
+    font-size: 62.5%;
+} / */
+
+.logo img{
+    height: 160px;
+    overflow: hidden;
+}
+nav{
+    height: 80px;
+    padding: 0;
+    margin: 0;
+}
+
+
+body
+{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: monospace;
+    /* / background-color: red; */ 
+}
+nav
+{
+    background: #222;
+}
+nav .navbar-brand
+{
+    padding-left: 50px;
+    color: skyblue;
+    font-size: 35px;
+}
+nav .navbar-toggler
+{
+    background: white;
+}
+nav .navbar-toggler .navbar-toggler-icon
+{
+    margin: 2px 0;
+    color: red;
+}
+nav .navbar-brand:hover
+{
+    color: red;
+}
+nav ul li a
+{
+    color: white;
+    font-size: 15px;
+    margin: 0 5px;
+    transition: .5s;
+}
+nav ul li:hover a:hover
+{
+    background: red;
+    color: white;
+    cursor: pointer;
+}
+nav ul li .dropdown-menu .dropdown-item:hover
+{
+    color: red;
+    background: #222;
+}
+
+  hr{
+      height: 5px;
+      background-color: red;
+      margin: 0 !important;
+
+  }
+
+.main-container{
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+    justify-content: center;
+    /* width: 100%; */
+}
+
+.second-container{
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 400px 30px 400px;
+    /* background-color: aquamarine; */
+    background: rgba(0, 0,0,0.6);
+    /* box-sizing: border-box; */
+    width: 850px;
+    height: 480px;
+    border-radius: 15px;
+    /* padding: 10px 20px; */
+}
+
+
+.slogan h1{
+    text-align: center;
+    color: white;
+    margin-bottom: 20px;
+    font-size: 25px;
+    font-weight: 700;
+    font-family: 'Nunito', sans-serif;
+}
+
+.slogan{
+    align-items: center;
+    text-align: center;
+    width: 750px;
+}
+
+.slogan p{
+    text-align: left;
+    margin-left: 20px;
+    text-align: left;
+    color: white;
+    font-size: 16px;
+    font-family: 'Nunito', sans-serif;
+}
+
+.logo-img{
+    width: 300px;
+    height: 250px;
+}
+.logo-img img{
+    /* align-items: center; */
+    width: 100%;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    /* width: 500%;
+    height: 100%; */
+}
+
+.buttons{
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 10px;
+    gap: 10px;
+    margin-right: 20px;
+}
+
+.login-button{
+    border-radius: 11px;
+    text-decoration: none;
+    border: none;
+    padding: 3px 23px;
+    box-shadow: 1px 1px 3px black;
+    background-color: #D2EBE9;
+    cursor: pointer;
+}
+
+.login-button a{
+    color: black;
+}
+
+
+.login-button a:hover{
+    text-decoration: none;
+    color: white;
+}
+
+.login-button:hover{
+    background-color: #9BA3EB;
+}
+
+.signup-button{
+    border-radius: 11px;
+    text-decoration: none;
+    border: none;
+    padding: 3px 18px;
+    box-shadow: 1px 1px 3px black;
+    background-color: #00FFAB;
+    cursor: pointer;
+}
+
+.signup-button a{
+    color: black;
+}
+
+.signup-button a:hover{
+    color: white;
+    text-decoration: none;
+}
+
+.signup-button:hover{
+    background-color: #14C38E;
+}

@@ -1,0 +1,29 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    text-decoration: none;
+    list-style: none;
+}
+
+body {
+    display: flex;
+    height: 100vh;
+    background-color: rgb(204, 221, 224);
+
+    align-items: center;
+    justify-content: center;
+
+}
+
+.selectOpt,
+.from-group input {
+    margin-bottom: 20px;
+    overflow: hidden;
+}
+
+
+.selectOpt {
+    width: 50% !important;
+}

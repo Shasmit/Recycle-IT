@@ -1,0 +1,171 @@
+@import url('https://fonts.googleapis.com/css2?family=Radio+Canada:wght@300;400;500&display=swap');
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Radio Canada', sans-serif;
+  background-image: url('bg2.png');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+.box {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 400px;
+  height: auto;
+  padding: 40px;
+  transform: translate(-50%, -50%);
+  background: rgba(0, 0,0,0.6);
+  box-sizing: border-box;
+  box-shadow: 10px 15px 25px rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+}
+
+.login-tab {
+  position: relative;
+  width: 100%;
+  text-align: center;
+  margin-bottom: 30px;
+  padding: 10px;
+  margin-top: -10px;
+  margin-left: 1px;
+}
+
+.login-tab .col {
+  width: 100%;
+  color: #59B4B4;
+  float: left;
+  cursor: pointer;
+  padding: 5px;
+  padding-top: 8px;
+}
+
+.box .form-group {
+  position: relative;
+}
+
+.box .form-group input {
+  width: 100%;
+  padding: 10px 0;
+  font-size: 15px;
+  padding-left: 15px;
+  padding-top: 15px;
+  color: #ccc;
+  margin-bottom: 12px;
+  border: none;
+  border-bottom: 1px solid #e5ecf0;
+  outline: none;
+  background: transparent;
+}
+
+.box .form-group input:-webkit-autofill,
+.box .form-group input:-webkit-autofill:hover,
+.box .form-group input:-webkit-autofill:focus {
+  border: none;
+  border-bottom: 1px solid #03a9f4;
+  -webkit-text-fill-color: #ccc;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+.box .form-group label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 10px 10px;
+  font-size: 16px;
+  color: #ccc;
+  pointer-events: none;
+  transition: 0.5s;
+}
+
+.box .form-group input:focus~label,
+.box .form-group input:valid~label {
+  top: -20px;
+  left: 0;
+  color: #03a9f4;
+  font-size: 14px;
+}
+
+.remember-forgot-tab {
+  margin-top: -10px;
+  margin-bottom: 20px;
+  line-height: 16px;
+}
+
+.checkbox label {
+  float: left;
+}
+
+.forgot-pass label {
+  float: right;
+  margin-top: 10px;
+}
+
+.remember-forgot-tab .checkbox label,
+.remember-forgot-tab .forgot-pass a {
+  text-decoration: none;
+  color: #e5ecf0;
+  font-size: 15px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.remember-forgot-tab label:hover,
+.remember-forgot-tab a:hover {
+  color: #17a2b8;
+  font-size: 16px;
+}
+
+.remember-forgot-tab .checkbox input {
+  position: absolute;
+  line-height: 16px;
+  height: 15px;
+  width: 15px;
+  
+}
+
+.remember-forgot-tab .checkbox span {
+  margin-left: 22px;
+}
+
+.box .form-group .toggle-password {
+  float: right;
+  position: relative;
+  margin-top: -42px;
+  margin-right: 10px;
+  cursor: pointer;
+  opacity: 0.85;
+  color: #ccc;
+  margin-bottom: none;
+}
+
+
+.name{
+  display: flex;
+  gap: 20px;
+}
+
+.upload{
+  color: white;
+  font-size: 15px;
+  margin-left: 9px;
+  padding: none;
+  opacity: 0.85;
+
+}
+
+
+input {
+  overflow: visible;
+  border-radius: 10px;
+}
+
+#citizenship_image {
+  margin-bottom: 20px;
+  margin-left: 7px;
+  color: #59B4B4;
+  opacity: 0.85;
+  font-size: 14px;
+}

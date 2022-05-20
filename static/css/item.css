@@ -1,0 +1,246 @@
+
+::selection {
+    color:blueviolet;
+}
+
+/* for image slider */
+img {
+    vertical-align: middle;
+}
+
+/* Position the image container (needed to position the left and right arrows) */
+.container {
+    position: relative;
+    height: 400px;
+}
+.container .mySlides img {
+    height: 400px;
+}
+.demo{
+    height: 110px;
+}
+.demo img {
+    transform: transition 0.4s;
+}
+.row div img:hover {
+    width: 40%;
+    transform: scale(1.4);
+}
+
+
+/* Hide the images by default */
+.mySlides {
+    display: none;
+}
+.lowerImages {
+    width: 60%;
+    margin: auto;
+}
+
+/* Add a pointer when hovering over the thumbnail images */
+.cursor {
+    cursor: pointer;
+}
+
+/* Next & previous buttons */
+.prev,
+.next {
+    cursor: pointer;
+    position: absolute;
+    top: 40%;
+    width: auto;
+    padding: 16px;
+    margin-top: -50px;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    -webkit-user-select: none;
+    
+}
+
+/* Position the "next button" to the right */
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+    transition: transform 0.4s;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover,
+.next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+    width: 50px;
+    transform: scale(1.25);
+
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+    color: #f2f2f2;
+    font-size: 12px;
+    padding: 8px 12px;
+    position: absolute;
+    top: 0;
+}
+
+/* Container for image text */
+.caption-container {
+    text-align: center;
+    /* background-color: #222; */
+    padding: 2px 16px;
+    color: white;
+}
+
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* Six columns side by side */
+.column {
+    float: left;
+    width: 25%;
+}
+
+/* Add a transparency effect for thumnbail images */
+.demo {
+    opacity: 0.6;
+}
+
+.active,
+.demo:hover {
+    opacity: 1;
+}
+.images-slider {
+    height: 550px;
+}
+
+/************************** Product details ******************************/
+.userImage {
+    vertical-align: middle;
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+}
+.location {
+    display: inline;
+}
+.productDetails, .comment-box {
+    background-color: rgb(31, 33, 31);
+    padding:15px 15px 0 15px;
+    width: 90%;
+    margin: auto;
+    border-radius: 14px;
+}
+.productDetails .post-title h3{
+    text-transform: capitalize;
+
+}
+.comment-display a {
+    text-decoration: none;
+}
+
+.comment-display .form-group{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.comment-display .commentedText{
+    margin-left: 30px;
+}
+
+.post-details p {
+    text-align: justify;
+}
+
+.userPosted label, .productDetails label {
+
+    color: white;
+    padding-bottom: 10px;
+}
+
+.productDetails h3, .productDetails h5 {
+    text-decoration: underline;
+}
+
+
+/* lower buttons */
+
+
+.buttonContent button {
+    width: 20%;
+    margin-top: 30px;
+    transition: transform 0.5s;
+    margin-bottom: 30px;
+}
+
+.buttonContent button:hover {
+    background-color: blue;
+    transform: scale(1.3);
+}
+
+/* for comment */
+
+.comment-box {
+    background-color: rgb(58, 59, 58);
+    /* height: 500px; */
+    padding-bottom: 20px;
+    
+}
+
+.comment-box h4 {
+    text-transform: uppercase;
+    
+}
+
+.productDetails h1, .productDetails h2, .productDetails h3, .productDetails h4, .productDetails h5, .productDetails h6, .comment-box h4 {
+    color: wheat;
+    padding-bottom: 10px;
+} 
+
+fieldset {
+    /* border: 1px solid white; */
+    height: 100px;
+    padding:10px;
+    margin-top: 20px;
+}
+
+.form-control {
+    width: 70%;
+}
+.userImage{
+    margin:20px auto 20px auto;
+}
+.userPosted .form-group input{
+    display: inline;
+    margin: 20px auto 20px auto;
+}
+
+.comment-display {
+    margin-top: 40px;
+    margin-bottom: 40px;
+    background-color: whitesmoke;
+    border-radius: 14px;
+    padding: 10px 20px 20px 20px;
+}
+.comment-display .commentedText , .comment-display .form-group div{
+    color: black;
+    display: inline;
+}
+.commentedText {
+    background-color: #6c757d;
+    font-weight: 300;
+    border-radius: 14px;
+    color: white !important;
+    padding: 10px;
+    line-height: 1.5;
+}
+
+
+/* .sendBtn {
+
+} */

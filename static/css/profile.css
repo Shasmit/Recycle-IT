@@ -1,0 +1,257 @@
+body{
+    height: 100vh;
+    width: 100%;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.logo img{
+    height: 160px;
+    overflow: hidden;
+}
+
+nav{
+    height: 80px;
+    padding: 0;
+    margin: 0;
+}
+
+.fcontainerwhole{
+    /* border: 5px solid grey; */
+    height: 100vh;
+    /* display: flex; */
+    /* align-items: center; */
+    justify-content: center;
+    /* align-items: center; */
+    flex-wrap: wrap;
+
+}
+
+/* .fcontainer0{
+    margin-bottom: 10vh;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    background-color: wheat
+    
+} */
+
+.fcontainer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+}
+
+/* .background image{
+    height: fit-content;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+} */
+.fcontainer1{
+    /* border: 5px solid grey; */
+    display: flex;
+    border-radius: 0 0 15px 15px;
+    /* border: 5px solid grey; */
+    width: 90vh;
+    height: 90vh;
+    padding: 13px;
+    /* display: flex; */
+    /* align-items: center; */
+    text-align: center;
+    justify-content: center;
+    background-color: skyblue;
+    /* align-items: center; */
+    flex-wrap: wrap;
+}
+
+
+.wrapper {
+    width: 705px;
+    margin: 20px auto;
+    padding: 20px;
+  }
+  /* h1 {
+    display: inline-block;
+    background-color: #333;
+    color: #fff;
+    font-size: 20px;
+    font-weight: normal;
+    text-transform: uppercase;
+    padding: 4px 20px;
+    float: left;
+  } */
+  .clear {
+    clear: both;
+  }
+  .items {
+    /* border-radius: 15px 15px 15px 15px; */
+    display: block;
+    margin: 20px 0;
+    overflow: hidden;
+  }
+  .item {
+    border-radius: 10px;
+    
+    overflow: hidden;
+    background-color: #fff;
+    float: left;
+    margin: 0 10px 10px 0;
+    width: 205px;
+    padding: 10px;
+    height: 290px;
+  }
+  .item img {
+    /* overflow: hidden; */
+    display: block;
+    margin: auto;
+  }
+  h2 {
+    font-size: 16px;
+    display: block;
+    border-bottom: 1px solid #ccc;
+    margin: 0 0 10px 0;
+    padding: 0 0 5px 0;
+  }
+  /* button {
+    border: 1px solid #722A1B;
+    padding: 4px 14px;
+    background-color: #fff;
+    color: #722A1B;
+    text-transform: uppercase;
+    float: right;
+    margin: 5px 0;
+    font-weight: bold;
+    cursor: pointer;
+  } */
+  span {
+    float: right;
+  }
+  .shopping-cart {
+    display: inline-block;
+    background: url('http://cdn1.iconfinder.com/data/icons/jigsoar-icons/24/_cart.png') no-repeat 0 0;
+    width: 24px;
+    height: 24px;
+    margin: 0 10px 0 0;
+  }
+
+/* #corner {
+    border-radius: 15px;
+    background-color:  #FFFAF0;
+    padding: 13px;
+    height: 90vh;
+    width: 90vh;
+    text-align: center; */
+    /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); */
+    
+  /* } */
+
+.fcontainer2{
+    display: flex;
+    border-radius: 0 0 15px 15px;
+    /* border: 5px solid grey; */
+    width: 90vh;
+    height: 90vh;
+    padding: 13px;
+    /* display: flex; */
+    /* align-items: center; */
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    background-color: skyblue;
+    /* align-items: center; */
+    flex-wrap: wrap;
+    
+}
+
+img{
+    height: 200px;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.profilepic{
+    /* display: flex; */
+    height: 150px;
+    width: 150px;
+    position: absolute ;
+    /* align-items: center; */
+    /* justify-content: center; */
+    top: 35%;
+    left: 78.5%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    overflow: hidden;
+    border: 1px solid grey;
+}
+
+#photo{
+    height: 100%;
+    width: 100%;
+}
+
+#file{
+    display: none;
+}
+
+#uploadBtn{
+    height: 40px;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    background-color: black;
+    color: wheat;
+    line-height: 30px;
+    font-size: 15px;
+    cursor: pointer;
+    display: none;
+}
+
+.details {
+  height: 300px;
+  
+}
+  .details .titular {
+    background: #cc324b;
+  }
+    
+  .details .summary{
+    margin: 0;
+  }
+  .details .summary p {
+    margin: 0;
+    display: inline-block;
+    font-size: 16px;
+  }
+  .details .summary a {
+    display: block;
+    line-height: 35px;
+    border-bottom: 1px solid #1f253d;
+    -webkit-transition: background .3s;
+    transition: background .3s;
+  }
+    .details .summary a:hover {
+      background: #50597b;
+    }
+    .details .summary a:hover .day {
+      color: #e64c65;
+    }
+    .details .summary-date {
+      padding-left: 20px;
+    }
+
+/* edit profile */
+#workarea button {
+    border: 0 !important;
+}
+
+/* h1{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+} */

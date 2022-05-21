@@ -13,54 +13,7 @@
 </head>
 
 <body>
-    <button type="button" class="btn btn-info" data-toggle="modal" data-target="#exampleModalLong">
-        +
-    </button>
-
-    <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle"
-        aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLongTitle">Post Ad</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <div class="steps">
-                        <form class="from-group">
-
-                            <div class="form-group selectOpt">
-
-                                <select class="form-select text-uppercase" name="category" aria-label="Default select example" required>
-                                    {% for category in categories %}
-                                        <option value="{{ category.id }}">{{ category.name }}</option>
-                                    {% endfor %}    
-                                </select>
-
-                            </div>
-
-                            <input type="text" name="title" class="form-control" placeholder="Title..." id="title" maxlength="15" required>
-
-                            <textarea name="description" class="form-control" id="" rows="3"
-                                placeholder="Product description..."></textarea>
-                            <br>
-                            <input name="location" type="text" class="form-control" placeholder="Location..." id="location" required>
-
-                            <input name="image" type="file" id="avatar" name="avatar" accept="image/png, image/jpeg">
-                        </form>
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-danger" type='reset'>Clear</button>
-                    <button type="submit" class="btn btn-primary">Publish</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-
+    
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"

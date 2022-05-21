@@ -21,13 +21,117 @@
 <body>
     <div class="container-fluid">
         <div class="images-slider">
-            {% comment %} <div class="container">
-                <!-- upper images -->
-                <div class="product-img">
-                    <img src="{{ post.image.url }}" alt="" srcset="">
-                </div>
-            </div> {% endcomment %}
-        </div>
+            <div class="container">
+            <!-- upper images -->
+
+            <div class="mySlides">            
+            <div class="numbertext">1 / 4</div>
+            <img src="{{ post.image.url }}"
+            style="width:100%" onclick="currentSlide(1)" class="img-fluid mx-auto">
+            
+            </div>
+            
+            
+            
+            <div class="mySlides">
+            
+            <div class="numbertext">2 / 4</div>
+            
+            <img src="{{ post.image.url }}"
+            
+             onclick="currentSlide(2)" style="width:100%" class="img-fluid mx-auto">
+            
+           </div>
+            
+            
+            
+           <div class="mySlides">
+            
+          <div class="numbertext">3 / 4</div>
+            
+           <img src="{{ post.image.url }}"
+            
+           style="width:100%" onclick="currentSlide(3)" class="img-fluid mx-auto">
+            
+            </div>
+            
+            
+            
+           <div class="mySlides">
+            
+           <div class="numbertext">4 / 4</div>
+            
+            <img src="{{ post.image.url }}" style="width:100%"
+            
+           class="img-fluid mx-auto">
+            
+            </div>
+            
+            
+            
+           <a class="prev" onclick="plusSlides(-1)">❮</a>
+            
+            <a class="next" onclick="plusSlides(1)">❯</a>
+            
+            
+            
+           <div class="caption-container">
+            
+       <p id="caption"></p>
+            
+          </div>
+            
+            
+            
+           <!-- lower images -->
+            
+       <div class="row lowerImages">
+            
+      <div class="column">
+            
+       <img class="demo cursor"
+            
+            src="{{ post.image.url }}"
+            
+          style="width:100%" onclick="currentSlide(1)">
+            
+          </div>
+            
+         <div class="column">
+            
+          <img class="demo cursor"
+            
+        src="{{ post.image.url }}" style="width:100%"
+            
+        onclick="currentSlide(2)">
+            
+           </div>
+            
+         <div class="column">
+            
+          <img class="demo cursor"
+            
+           src="{{ post.image.url }}"
+            
+            style="width:100%" onclick="currentSlide(3)">
+            
+            </div>
+            
+      <div class="column">
+            
+            <img class="demo cursor"
+            
+           src="{{ post.image.url }}" style="width:100%"
+            
+            onclick="currentSlide(4)">
+            
+            </div>
+            
+         </div>
+            
+          </div>
+            
+           </div>
 
 
         <div class="productDetails">
@@ -35,7 +139,7 @@
                 <a href="#"><img src="{{ post.user.profile.photo.url }}" alt=""
                         class="userImage" /></a>
                 {% if post.user == request.user %}
-                    <span>@{{ post.user.username }}</span>
+                    <span style="color: white;">@{{ post.user.username }}</span>
                 {% else %}
                     <a href="{% url 'message' post.user.username %}">@{{ post.user.username }}</a>
                 {% endif %}
@@ -52,8 +156,8 @@
 
             <div class="post-details">
                 <div class="form-group">
-                    <h5>Description</h5>
                     <h6>Category: {{ post.category.name }}</h6>
+                    <h5>Description</h5>
                     <label for="">
                         <p>{{ post.description }}</p>
                     </label>
@@ -157,7 +261,7 @@
 
     <!-- linking fontawesome -->
     <script src="https://kit.fontawesome.com/075f22e2f4.js" crossorigin="anonymous"></script>
-    <script src="/Fun_tastic-4-main/static/js/item.js"></script>
+    <script src="{% static 'js/item.js' %}"></script>
 
 </body>
 </html>

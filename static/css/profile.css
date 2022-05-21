@@ -86,20 +86,20 @@ nav{
   }
   .items {
     /* border-radius: 15px 15px 15px 15px; */
-    display: block;
+    display: flex;
     margin: 20px 0;
-    overflow: hidden;
+    flex-wrap: nowrap;
+    overflow-x: scroll;
   }
   .item {
     border-radius: 10px;
-    
-    overflow: hidden;
+    flex-shrink: 0;
     background-color: #fff;
-    float: left;
     margin: 0 10px 10px 0;
     width: 205px;
+    flex-grow: 0;
     padding: 10px;
-    height: 290px;
+    height: 360px;
   }
   .item img {
     /* overflow: hidden; */

@@ -42,7 +42,7 @@ def register(request):
             if user:
                 login(request, user)
                 messages.success(request, 'Account created successfully.')
-                return redirect('profile')
+                return redirect('home')
             else:
                 messages.error(request, 'Registration failed.')
         else:
@@ -62,7 +62,7 @@ def loginUser(request):
         user = authenticate(username=username, password=password)
         if user:
             login(request, user)
-            return redirect('profile')
+            return redirect('home')
         else:
             messages.info(request, 'Invalid username or password')
 
@@ -74,7 +74,16 @@ def logoutUser(request):
 
 
 def home(request):
-    return render(request, 'html/index.html')
+    posts = Post.objects.all()
+
+    categories = Category.objects.all()
+
+    context = {
+        'categories': categories,
+        'posts': posts
+    }
+
+    return render(request, 'html/homepage.html', context)
 
 
 def post(request):
@@ -148,7 +157,7 @@ def createPost(request):
         'categories': categories
     }
 
-    return render(request, 'home/createPost.html', context)
+    return redirect('home')
 
 
 @login_required
@@ -330,9 +339,11 @@ def profile(request):
     user = request.user
     
     user_posts = Post.objects.filter(user=user)
-    
+    categories = Category.objects.all()
+
     context = {
-        'posts': user_posts
+        'posts': user_posts, 
+        'categories': categories
     }
 
     return render(request, 'html/profile.html', context)

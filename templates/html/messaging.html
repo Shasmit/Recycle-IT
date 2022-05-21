@@ -1,0 +1,46 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Message</title>
+  <link rel="icon" href="/Fun_tastic-4-main/static/images/white_logo.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Open+Sans'>
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.3/jquery.mCustomScrollbar.min.css'>
+<link rel="stylesheet" href="{% static 'css/messaging.css' %}">
+
+</head>
+<body>
+<div class="chat">
+  <div class="chat-title">
+    <h1>{{ receiver.first_name }} {{ receiver.last_name }}</h1>
+    <!-- <h2>Sus</h2> -->
+    <figure class="avatar">
+      <img src="{{ receiver.profile.photo.url }}" /></figure>
+  </div>
+  <div class="messages">
+    <div class="messages-content">
+      {% for message in conversations %}
+        {{ message.receiver}}
+        {{ message.content }}
+      {% endfor %}
+    </div>
+  </div>
+  <div class="message-box">
+    <form action="{% url 'message' receiver.username %}" method="post">
+      <textarea type="text" class="message-input" name='content' placeholder="Type your text here..."></textarea>
+      <button type="submit" class="message-submit">Send</button>
+    </form>
+  </div>
+
+</div>
+<div class="bg"></div>
+<!-- partial -->
+  <script src='//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.3/jquery.mCustomScrollbar.concat.min.js'></script>
+<script  src="{% static 'js/messaging.js' %}"></script>
+
+</body>
+</html>

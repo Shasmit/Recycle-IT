@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block main %}
+<main>
+    <form action="" method="post" enctype='multipart/form-data'>
+        {% csrf_token %}
+        <div class="modal-body">
+            <div class="steps">
+                <form class="from-group" action="" method='POST'>
+                    {% csrf_token %}
+                    <div class="form-group selectOpt">
+                        <select class="form-select text-uppercase" name="category" aria-label="Category" required>
+
+                            {% for category in categories %}
+                                {% if category == post.category %}
+                                    <option value="{{ category.id }}" selected>{{ category.name }}</option>
+                                {% endif %}
+                                    <option value="{{ category.id }}">{{ category.name }}</option>
+                            {% endfor %}    
+                        </select>
+                    </div>
+                    <input type="text" name="title" value="{{ post.title }}" class="form-control" placeholder="Title..." id="title" maxlength="15" required>
+                    <textarea name="description" class="form-control" id="" rows="3"
+                        placeholder="Product description...">{{ post.description }}</textarea>
+                    <br>
+                    <input value={{ post.location }} name="location" type="text" class="form-control" placeholder="Location..." id="location" required>
+                    <input value={{ post.images }} name="images" type="file" id="avatar" name="avatar" accept="image/png, image/jpeg" multiple="multiple">
+                    <button type="submit" class="btn btn-primary">Update</button>
+                </form>
+            </div>
+        </div>
+    </form>
+</main>
+{% endblock main %}

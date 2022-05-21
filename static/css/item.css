@@ -9,13 +9,35 @@ img {
 }
 
 /* Position the image container (needed to position the left and right arrows) */
+
 .container {
     position: relative;
-    height: 400px;
+    width: 100vw;
 }
-.container .mySlides img {
-    height: 400px;
+
+.images-slider {
+    width: 100vw;
 }
+
+.images-slider .container .product-img {
+    margin: auto;
+    opacity: 0.9;
+    transition: all 0.3s ease;
+}
+
+.images-slider .container .product-img:hover {
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+.images-slider .container .product-img img {
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 5px;
+    width: 600px;
+    height: 40vh;
+}
+
 .demo{
     height: 110px;
 }

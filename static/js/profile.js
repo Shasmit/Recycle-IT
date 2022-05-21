@@ -17,20 +17,3 @@ imgDiv.addEventListener('mouseleave', function()
 {
     uploadBtn.style.display='none';
 });
-
-file.addEventListener('change', function(event)
-{
-    const chooseFile = this.files[0];
-
-    if (chooseFile){
-        const reader = new FileReader();
-
-        // form.submit()
-        reader.addEventListener('load', function(){
-            img.setAttribute('src', reader.result);
-        });
-
-        reader.readAsDataURL(chooseFile);
-
-    }
-});

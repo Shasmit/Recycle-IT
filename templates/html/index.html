@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 
@@ -22,15 +23,20 @@
 
   <title>Projo Login</title>
 
-  <!--=====================================================================================================-->
+  <!-- ===================================================================================================== -->
 
-  <link rel="stylesheet" type="text/css" href="/Fun_tastic-4-main/static/css/login.css"> <!-- Login CSS -->
+  <link rel="stylesheet" type="text/css" href="{% static 'css/login.css' %}"> <!-- Login CSS -->
   <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"> <!-- FontAwesome CSS -->
   <!--script src="js/login.js"></script> JS file -->
 
 </head>
 
 <body>
+  {% if messages %}
+      {% for message in messages %}
+        <p>{{ message }}</p>
+      {% endfor %}
+    {% endif %}
   <div class="box">
 
     <div class="row login-tab">
@@ -44,22 +50,23 @@
 
     <!--LOGIN -->
     <div id="login-box">
-      <form action="" id="login-form">
+      <form action="{% url 'login' %}" method='post' id="login-form" enctype="multipart/form-data">
+        {% csrf_token %}
         <div class="form-group">
-          <input type="text" name="email" required />
-          <label for="email"> Email </label>
+          <input type="text" name="username" required />
+          <label for="username"> Username </label>
         </div>
         <div class="form-group">
           <input type="password" id="login-pass" name="password" required />
           <i toggle="#login-pass" class="fa fa-eye toggle-password" id="toggle-login-pass"></i>
-          <label for="password"> Password </label>
+          <label for="login-pass"> Password </label>
         </div>
         <div class="row remember-forgot-tab">
           <div class="col checkbox">
-            <label><input type="checkbox" name="remember-me" checked="checked" /> <span> Remember Me? </span></label>
+            <label><input type="checkbox" checked="checked" /> <span> Remember Me? </span></label>
           </div>
           <div class="col forgot-pass">
-            <label> <a href="www.google.com" name="forgot-pass"> Forgot Password? </a> </label>
+            <label> <a href="www.google.com"> Forgot Password? </a> </label>
           </div>
         </div>
         <button type="submit" class="btn btn-outline-info btn-block"> Login </button>
@@ -68,21 +75,22 @@
 
     <!-- SIGNUP -->
     <div id="signup-box">
-      <form action="" id="signup-form">
+      <form action="{% url 'register' %}" method='post' id="signup-form" enctype="multipart/form-data">
+        {% csrf_token %}
         <div class="name">
           <div class="form-group">
-            <input type="text" name="username" required />
-            <label for="username"> First Name </label>
+            <input type="text" name="first_name" required />
+            <label for="first_name"> First Name </label>
           </div>
           <div class="form-group">
-            <input type="text" name="username" required />
-            <label for="username"> Last Name </label>
+            <input type="text" name="last_name" required />
+            <label for="last_name"> Last Name </label>
           </div>
         </div>
         
         <div class="form-group">
-          <input type="text" name="email" required />
-          <label for="email"> Email </label>
+          <input type="text" name="username" required />
+          <label for="username"> Username </label>
         </div>
         
         <div class="form-group">
@@ -98,7 +106,7 @@
 
         <!-- <div class="upload"><p>Upload your Citizenship picture :</p></div> -->
         <label for="choose-file" class="upload">Upload your Citizenship : <Picture></Picture></label>
-        <input type="file" name="Citizenship" id="citizenship_image">
+        <input type="file" name="citizenship" id="citizenship_image">
         
         <button type="submit" class="btn btn-outline-info btn-block"> Create Account </button>
       </form>
@@ -209,6 +217,10 @@
         input.attr("type", "password");
       }
     }
+
+    {% if to == 'register' %}
+    $('#signup-link').click()
+    {% endif %}
   </script>
 
 </body>

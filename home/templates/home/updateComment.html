@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block main %}
+<main>
+    <form class="from-group" action="" method='POST'>
+        {% csrf_token %}
+        <input type="text" name='content' value="{{ comment.content }}" placeholder="Write your comment here..."/>
+        <button type="submit" class="btn btn-primary">Update</button>
+    </form>
+</main>
+{% endblock main %}

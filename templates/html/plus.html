@@ -29,41 +29,31 @@
                 </div>
                 <div class="modal-body">
                     <div class="steps">
-                        <div class="from-group">
+                        <form class="from-group">
 
                             <div class="form-group selectOpt">
 
-                                <select class="form-select text-uppercase" aria-label="Default select example" required>
-
-                                    <option selected>Category</option>
-
-                                    <option value="Kathmandu">Donate</option>
-
-                                    <option value="Pokhara">Exchange</option>
-
+                                <select class="form-select text-uppercase" name="category" aria-label="Default select example" required>
+                                    {% for category in categories %}
+                                        <option value="{{ category.id }}">{{ category.name }}</option>
+                                    {% endfor %}    
                                 </select>
 
                             </div>
 
-                            <input type="text" class="form-control" placeholder="Title..." id="title" maxlength="15" required>
+                            <input type="text" name="title" class="form-control" placeholder="Title..." id="title" maxlength="15" required>
 
-                            <textarea class="form-control" id="" rows="3"
+                            <textarea name="description" class="form-control" id="" rows="3"
                                 placeholder="Product description..."></textarea>
                             <br>
-                            <input type="text" class="form-control" placeholder="Location..." id="location" required>
+                            <input name="location" type="text" class="form-control" placeholder="Location..." id="location" required>
 
-                            <input type="file" id="avatar" name="avatar" accept="image/png, image/jpeg" multiple="multiple">
-
-
-
-
-
-
-                        </div>
+                            <input name="image" type="file" id="avatar" name="avatar" accept="image/png, image/jpeg">
+                        </form>
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-danger" type='reset'>Clear</button>
                     <button type="submit" class="btn btn-primary">Publish</button>
                 </div>
             </div>

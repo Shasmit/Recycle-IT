@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block main %}
+<main>
+    <div>
+        <a class='btn btn-primary' href="{% url 'createPost' %}">Create</a>
+    </div>
+    <div class="posts">
+        {% for post in posts %}
+            <div class="post">
+                <div class="post-id">
+                    {{ post.id }}
+                </div>
+                <div class="post-user">
+                    {% if post.user == request.user %}
+                        <span>@{{ post.user.username }}</span>
+                    {% else %}
+                        <a href="{% url 'message' post.user.username %}">@{{ post.user.username }}</a>
+                    {% endif %} | {{ post.created_at }}
+                </div>
+                <div class="post-category">Category: {{ post.category.name }}</div>
+                <div class="post-title">{{ post.title }}</div>
+                <div class="post-description">{{ post.description }}</div>
+                {% if post.images %}
+                    <div class="post-image">
+                        <img src="{{ post.images.url }}" alt="" width='250px' height='250px'>
+                    </div>
+                {% endif %}
+
+                <div>
+                    <a href="{% url 'comments' post.id %}">See comments</a>
+                </div>
+                <div>
+                    <form class="from-group" action="{% url 'createComment' post.id %}" method='POST'>
+                        {% csrf_token %}
+                        <input type="text" name='content' placeholder="Write your comment here..." required/>
+                        <button type="submit" class="btn btn-primary">Send</button>
+                    </form>
+                </div>
+                <div>
+                    <a class="btn btn-success mx-3" href="{% url 'updatePost' post.id %}">Update</a>
+                    <a class="btn btn-danger mx-3" href="{% url 'deletePost' post.id %}">Delete</a>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</main>
+{% endblock main %}

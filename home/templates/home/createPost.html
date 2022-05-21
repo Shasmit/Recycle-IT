@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block main %}
+<main>
+    <form class="from-group" action="" method='POST' enctype='multipart/form-data'>
+        {% csrf_token %}
+        <div class="form-group selectOpt">
+            <select class="form-select text-uppercase" name="category" aria-label="Category" required>
+                {% for category in categories %}
+                    <option value="{{ category.id }}">{{ category.name }}</option>
+                {% endfor %}    
+            </select>
+        </div>
+        <input type="text" name="title" class="form-control" placeholder="Title..." id="title" maxlength="15" required>
+        <textarea name="description" class="form-control" id="" rows="3"
+            placeholder="Product description..."></textarea>
+        <br>
+        <input name="location" type="text" class="form-control" placeholder="Location..." id="location" required>
+        <input name="images" type="file" name='images' id="avatar" name="avatar" accept="image/png, image/jpeg" multiple="multiple">
+        <button type="submit" class="btn btn-primary">Publish</button>
+    </form>
+</div>
+</main>
+{% endblock main %}

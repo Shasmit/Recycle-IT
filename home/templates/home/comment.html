@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block main %}
+<main>
+    <div class="comments">
+        {% for comment in comments %}
+            <div class="comment">
+                <div class="comment-user">
+                    {% if comment.user == request.user %}
+                        <span>@{{ comment.user.username }}</span>
+                    {% else %}
+                        <a href="{% url 'message' comment.user.username %}">@{{ comment.user.username }}</a>
+                    {% endif %} | {{ comment.created_at }}
+                </div>
+                <div class="comment-content">{{ comment.content }}</div>
+                <div>
+                    <a class="btn btn-success mx-3" href="{% url 'updateComment' comment.id %}">Update</a>
+                    <a class="btn btn-danger mx-3" href="{% url 'deleteComment' comment.id %}">Delete</a>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</main>
+{% endblock main %}
